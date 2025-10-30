@@ -253,7 +253,7 @@ const Footer = () => {
               
               <div className="flex flex-wrap gap-6 text-sm">
                 <a href="https://yashpokharna.in/" className="text-gray-600 transition-colors link-item hover:text-purple-600">
-                  Made with 💖 by Yash Pokharna
+                  A project by Yash Pokharna💻.
                 </a>
               </div>
             </div>
