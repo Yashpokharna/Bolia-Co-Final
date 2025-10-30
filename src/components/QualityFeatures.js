@@ -119,6 +119,7 @@ const WhyChooseUs = () => {
   return (
     <section
       ref={sectionRef}
+      id="why-us"
       className="relative px-5 py-24 overflow-hidden md:px-16 bg-gradient-to-br from-white via-gray-50 to-gray-100"
     >
       <div className="container relative z-10 mx-auto">
