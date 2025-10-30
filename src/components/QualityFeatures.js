@@ -21,7 +21,7 @@ const WhyChooseUs = () => {
       icon: EmojiEventsIcon,
       title: "Award-Winning Excellence",
       desc: "Recognized as one of the top CA firms with multiple industry awards for outstanding client service and professional expertise.",
-      stat: "15+ Awards",
+      // stat: "15+ Awards",
       color: "from-yellow-400 to-orange-500",
       bgColor: "bg-yellow-50",
     },
@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
       icon: VerifiedIcon,
       title: "Certified Professionals",
       desc: "Our team consists of highly qualified Chartered Accountants with extensive experience in diverse financial domains.",
-      stat: "50+ CAs",
+      // stat: "50+ CAs",
       color: "from-blue-400 to-indigo-600",
       bgColor: "bg-blue-50",
     },
@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
       icon: SecurityIcon,
       title: "Data Security & Privacy",
       desc: "Bank-level encryption and strict confidentiality protocols ensure your financial data is always protected and secure.",
-      stat: "100% Secure",
+      // stat: "100% Secure",
       color: "from-green-400 to-teal-600",
       bgColor: "bg-green-50",
     },
@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
       icon: SpeedIcon,
       title: "Quick Turnaround Time",
       desc: "Efficient processes and dedicated teams ensure timely delivery of services without compromising on quality.",
-      stat: "48hr Response",
+      // stat: "48hr Response",
       color: "from-purple-400 to-pink-600",
       bgColor: "bg-purple-50",
     },
@@ -53,15 +53,15 @@ const WhyChooseUs = () => {
       icon: SupportAgentIcon,
       title: "24/7 Client Support",
       desc: "Round-the-clock assistance through multiple channels ensures you always have expert help when you need it.",
-      stat: "24/7 Available",
+      // stat: "24/7 Available",
       color: "from-red-400 to-rose-600",
       bgColor: "bg-red-50",
     },
     {
       icon: CheckCircleIcon,
       title: "Proven Track Record",
-      desc: "Successfully served 500+ clients across various industries with a 98% client satisfaction and retention rate.",
-      stat: "98% Satisfaction",
+      desc: "Successfully served various clients across various industries with a good client satisfaction and retention rate.",
+      // stat: "98% Satisfaction",
       color: "from-cyan-400 to-blue-600",
       bgColor: "bg-cyan-50",
     },
@@ -259,7 +259,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Stats */}
-        <div className="p-12 mb-20 bg-white border border-gray-200 shadow-sm stats-grid rounded-3xl">
+        {/* <div className="p-12 mb-20 bg-white border border-gray-200 shadow-sm stats-grid rounded-3xl">
           <div className="grid gap-8 md:grid-cols-3">
             <div className="text-center">
               <div className="mb-2 text-5xl font-black text-transparent stat-number bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text">
@@ -279,8 +279,8 @@ const WhyChooseUs = () => {
               </div>
               <p className="text-lg text-gray-700">Satisfaction Rate</p>
             </div>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </section>
   );

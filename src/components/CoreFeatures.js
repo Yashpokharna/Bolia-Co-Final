@@ -14,7 +14,7 @@ const IndustriesSection = () => {
       desc: "Streamlined financial solutions for production units, inventory management, and cost optimization.",
       services: ["Cost Accounting", "Inventory Valuation", "GST Compliance", "Process Optimization"],
       gradient: "from-orange-500 via-red-500 to-rose-500",
-      clients: "150+"
+      // clients: "150+"
     },
     {
       icon: TrendingUp,
@@ -22,7 +22,7 @@ const IndustriesSection = () => {
       desc: "Growth-focused advisory for emerging businesses, from incorporation to scaling operations.",
       services: ["Business Setup", "Funding Advisory", "Growth Strategy", "Pitch Decks"],
       gradient: "from-blue-500 via-cyan-500 to-teal-500",
-      clients: "200+"
+      // clients: "200+"
     },
     {
       icon: Store,
@@ -30,7 +30,7 @@ const IndustriesSection = () => {
       desc: "Comprehensive solutions for multi-channel businesses, online marketplaces, and retail chains.",
       services: ["E-commerce Accounting", "Multi-state GST", "Payment Gateway", "Analytics"],
       gradient: "from-purple-500 via-pink-500 to-rose-500",
-      clients: "120+"
+      // clients: "120+"
     },
     {
       icon: Home,
@@ -38,7 +38,7 @@ const IndustriesSection = () => {
       desc: "Specialized services for developers, builders, and property management companies.",
       services: ["Project Accounting", "RERA Compliance", "Joint Ventures", "Tax Planning"],
       gradient: "from-green-500 via-emerald-500 to-teal-500",
-      clients: "80+"
+      // clients: "80+"
     },
     {
       icon: Heart,
@@ -46,7 +46,7 @@ const IndustriesSection = () => {
       desc: "Tailored financial management for hospitals, clinics, and healthcare service providers.",
       services: ["Medical Practice Setup", "Insurance Claims", "Regulatory Filing", "Compliance"],
       gradient: "from-red-500 via-rose-500 to-pink-500",
-      clients: "90+"
+      // clients: "90+"
     },
     {
       icon: GraduationCap,
@@ -54,7 +54,7 @@ const IndustriesSection = () => {
       desc: "Financial solutions for schools, colleges, training institutes, and edtech companies.",
       services: ["Trust Management", "Fee Collection", "Grant Accounting", "Audits"],
       gradient: "from-indigo-500 via-blue-500 to-cyan-500",
-      clients: "60+"
+      // clients: "60+"
     },
     {
       icon: Coffee,
@@ -62,7 +62,7 @@ const IndustriesSection = () => {
       desc: "Accounting and compliance for restaurants, hotels, cafes, and food service businesses.",
       services: ["POS Integration", "FSSAI Compliance", "Franchise Setup", "Inventory"],
       gradient: "from-amber-500 via-orange-500 to-red-500",
-      clients: "70+"
+      // clients: "70+"
     },
     {
       icon: Laptop,
@@ -70,7 +70,7 @@ const IndustriesSection = () => {
       desc: "Tech-savvy solutions for software companies, IT services, and digital agencies.",
       services: ["Revenue Recognition", "R&D Tax Credits", "IP Valuation", "Global Ops"],
       gradient: "from-cyan-500 via-teal-500 to-green-500",
-      clients: "110+"
+      // clients: "110+"
     },
   ];
 
@@ -177,14 +177,14 @@ const IndustriesSection = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                    {/* <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                       <span className={`text-3xl font-black bg-gradient-to-r ${industry.gradient} text-transparent bg-clip-text`}>
                         {industry.clients}
                       </span>
                       <span className="text-xs tracking-wider text-gray-500 uppercase">
-                        Clients
+                        See More
                       </span>
-                    </div>
+                    </div> */}
                   </div>
 
                   {isActive && (

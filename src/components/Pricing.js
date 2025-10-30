@@ -1,11 +1,9 @@
 "use client";
+import React from "react";
 
 import { useState, useEffect, useRef } from "react";
-import { Phone, Mail, MapPin, Globe, Send, Building2 } from "lucide-react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+import { Phone, Mail, MapPin, Globe, Send, Clock } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,84 +15,28 @@ const Contact = () => {
   });
 
   const sectionRef = useRef(null);
-  const headingRef = useRef(null);
-  const leftRef = useRef(null);
-  const rightRef = useRef(null);
-  const mapRef = useRef(null);
+  const observerRef = useRef(null);
 
   useEffect(() => {
-    const heading = headingRef.current;
-    const left = leftRef.current;
-    const right = rightRef.current;
-    const map = mapRef.current;
-
-    if (!heading || !left || !right || !map) return;
-
-    // Heading animation
-    gsap.fromTo(
-      heading.children,
-      { opacity: 0, y: -50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: heading,
-          start: "top 85%",
-        },
-      }
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          }
+        });
+      },
+      { threshold: 0.1 }
     );
 
-    // Left side animation
-    gsap.fromTo(
-      left,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: left,
-          start: "top 80%",
-        },
-      }
-    );
+    const elements = sectionRef.current.querySelectorAll(".fade-up");
+    elements.forEach((el) => observerRef.current.observe(el));
 
-    // Right side animation
-    gsap.fromTo(
-      right,
-      { opacity: 0, x: 100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: right,
-          start: "top 80%",
-        },
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
       }
-    );
-
-    // Map animation
-    gsap.fromTo(
-      map,
-      { opacity: 0, y: 50, scale: 0.95 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: map,
-          start: "top 85%",
-        },
-      }
-    );
+    };
   }, []);
 
   const handleChange = (e) => {
@@ -120,138 +62,115 @@ const Contact = () => {
     });
   };
 
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: "Visit Us",
+      content: ["Office 09, P 597, Ward 12 C,", "Gandhidham, Gujarat", "INDIA 370201"],
+      gradient: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: Phone,
+      title: "Call Us",
+      content: ["+91 2836233033", "+91 9104402201"],
+      gradient: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      content: ["associatesbolia@gmail.com"],
+      gradient: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: Globe,
+      title: "Website",
+      content: ["www.bolia.co.in"],
+      gradient: "from-orange-500 to-red-500"
+    }
+  ];
+
   return (
     <section
       ref={sectionRef}
-      className="relative px-5 py-20 overflow-hidden md:px-16 bg-gradient-to-b from-white via-purple-50/30 to-white"
       id="contact"
+      className="relative min-h-screen px-5 py-20 overflow-hidden md:px-16 bg-gradient-to-br from-gray-50 via-white to-blue-50"
     >
+      {/* Animated background blobs */}
+      <div className="absolute rounded-full top-20 right-10 w-72 h-72 bg-gradient-to-br from-blue-400 to-purple-400 mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute rounded-full bottom-20 left-10 w-72 h-72 bg-gradient-to-br from-pink-400 to-orange-400 mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute rounded-full top-1/2 left-1/2 w-72 h-72 bg-gradient-to-br from-green-400 to-cyan-400 mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
       <div className="container relative z-10 mx-auto max-w-7xl">
-        {/* Heading */}
-        <div ref={headingRef} className="mb-20 text-center">
-          <div className="inline-block px-6 py-2 mb-6 text-sm font-bold tracking-wider text-white uppercase rounded-full bg-gradient-to-r from-purple-600 to-pink-600">
-            Contact Us
-          </div>
-          
-          <h2 className="mb-4 text-5xl font-extrabold text-gray-900 md:text-6xl">
-            Get In Touch
+        {/* Header */}
+        <div className="mb-20 text-center fade-up">
+          <span className="block mb-3 text-sm font-bold tracking-widest text-blue-600 uppercase">
+            GET IN TOUCH
+          </span>
+          <h2 className="mb-6 text-5xl font-black text-transparent md:text-7xl bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+            Let's Connect
           </h2>
-          
-          <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            Ready to take your business to the next level? We're here to help you every step of the way.
+          <div className="w-32 h-1 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-600 to-purple-600"></div>
+          <p className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-600">
+            Have questions or ready to transform your financial journey? We're here to help. Reach out and let's start a conversation about your success.
           </p>
         </div>
 
-        {/* Main Content */}
-        <div className="grid gap-16 mb-20 lg:grid-cols-2">
-          {/* Left Side - Contact Details */}
-          <div ref={leftRef} className="space-y-8">
-            <div>
-              <h3 className="mb-6 text-3xl font-bold text-gray-900">
-                Let's Start a Conversation
+        {/* Contact Info Grid */}
+        <div className="grid max-w-6xl gap-6 mx-auto mb-20 md:grid-cols-2 lg:grid-cols-4">
+          {contactInfo.map((info, index) => (
+            <div
+              key={index}
+              className="relative p-6 overflow-hidden text-center transition-all duration-300 bg-white shadow-lg fade-up group rounded-2xl hover:shadow-2xl hover:-translate-y-2"
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${info.gradient} opacity-5 rounded-bl-full transition-opacity duration-300 group-hover:opacity-10`}></div>
+              
+              <div className="relative">
+                <div className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br ${info.gradient} flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6`}>
+                  {React.createElement(info.icon, {
+                    className: "text-white w-8 h-8",
+                  })}
+                </div>
+                
+                <h4 className="mb-3 text-lg font-bold text-gray-900">{info.title}</h4>
+                
+                <div className="space-y-1">
+                  {info.content.map((line, i) => (
+                    <p key={i} className="text-sm text-gray-600">{line}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Main Content - Form and Map Side by Side */}
+        <div className="grid gap-12 mb-20 lg:grid-cols-2">
+          {/* Contact Form */}
+          <div className="fade-up">
+            <div className="h-full p-8 bg-white shadow-2xl md:p-10 rounded-3xl">
+              <h3 className="mb-2 text-3xl font-bold text-gray-900">
+                Send a Message
               </h3>
-              <p className="text-lg leading-relaxed text-gray-600">
-                Whether you have questions about our services or need expert guidance for your business, our team is ready to assist you.
-              </p>
-            </div>
+              <p className="mb-8 text-gray-600">Fill out the form and we'll get back to you shortly</p>
 
-            <div className="space-y-6">
-              {/* Address */}
-              <div className="flex gap-5 p-6 transition-all duration-300 bg-white border-l-4 border-purple-600 rounded-lg shadow-md hover:shadow-xl">
-                <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-purple-100 to-pink-100">
-                  <MapPin className="w-6 h-6 text-purple-600" />
-                </div>
+              <div className="space-y-5">
                 <div>
-                  <h4 className="mb-2 text-lg font-bold text-gray-900">Visit Our Office</h4>
-                  <p className="text-gray-600">
-                    Office 09, P 597, Ward 12 C,<br />
-                    Gandhidham, Gujarat<br />
-                    INDIA 370201
-                  </p>
-                </div>
-              </div>
-
-              {/* Phone */}
-              <div className="flex gap-5 p-6 transition-all duration-300 bg-white border-l-4 border-pink-600 rounded-lg shadow-md hover:shadow-xl">
-                <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-pink-100 to-rose-100">
-                  <Phone className="w-6 h-6 text-pink-600" />
-                </div>
-                <div>
-                  <h4 className="mb-2 text-lg font-bold text-gray-900">Call Us</h4>
-                  <p className="text-gray-600">
-                    +91 2836233033<br />
-                    +91 9104402201
-                  </p>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="flex gap-5 p-6 transition-all duration-300 bg-white border-l-4 rounded-lg shadow-md border-rose-600 hover:shadow-xl">
-                <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-rose-100 to-pink-100">
-                  <Mail className="w-6 h-6 text-rose-600" />
-                </div>
-                <div>
-                  <h4 className="mb-2 text-lg font-bold text-gray-900">Email Us</h4>
-                  <p className="text-gray-600">
-                    associatesbolia@gmail.com
-                  </p>
-                </div>
-              </div>
-
-              {/* Website */}
-              <div className="flex gap-5 p-6 transition-all duration-300 bg-white border-l-4 border-indigo-600 rounded-lg shadow-md hover:shadow-xl">
-                <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-100 to-purple-100">
-                  <Globe className="w-6 h-6 text-indigo-600" />
-                </div>
-                <div>
-                  <h4 className="mb-2 text-lg font-bold text-gray-900">Visit Website</h4>
-                  <p className="text-gray-600">
-                    www.bolia.co.in
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Business Hours */}
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600">
-              <div className="flex items-start gap-4">
-                <Building2 className="flex-shrink-0 w-8 h-8 text-white" />
-                <div>
-                  <h4 className="mb-3 text-xl font-bold text-white">Business Hours</h4>
-                  <div className="space-y-2 text-purple-50">
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p>Saturday: 10:00 AM - 4:00 PM</p>
-                    <p>Sunday: Closed</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side - Contact Form */}
-          <div ref={rightRef}>
-            <div className="p-8 bg-white shadow-2xl md:p-10 rounded-2xl">
-              <h3 className="mb-8 text-2xl font-bold text-gray-900">
-                Send Us a Message
-              </h3>
-
-              <div className="space-y-6">
-                <div>
-                  <label className="block mb-2 text-sm font-bold text-gray-700">
-                    Full Name <span className="text-pink-600">*</span>
+                  <label className="block mb-2 text-sm font-semibold text-gray-700">
+                    Your Name <span className="text-pink-600">*</span>
                   </label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-lg bg-gray-50 focus:bg-white focus:border-purple-600 focus:outline-none"
+                    className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-xl bg-gray-50 focus:bg-white focus:border-blue-500 focus:outline-none"
                     placeholder="John Doe"
                   />
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-sm font-bold text-gray-700">
+                  <label className="block mb-2 text-sm font-semibold text-gray-700">
                     Email Address <span className="text-pink-600">*</span>
                   </label>
                   <input
@@ -259,13 +178,13 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-lg bg-gray-50 focus:bg-white focus:border-purple-600 focus:outline-none"
+                    className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-xl bg-gray-50 focus:bg-white focus:border-blue-500 focus:outline-none"
                     placeholder="john@example.com"
                   />
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-sm font-bold text-gray-700">
+                  <label className="block mb-2 text-sm font-semibold text-gray-700">
                     Phone Number
                   </label>
                   <input
@@ -273,13 +192,13 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-lg bg-gray-50 focus:bg-white focus:border-purple-600 focus:outline-none"
+                    className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-xl bg-gray-50 focus:bg-white focus:border-blue-500 focus:outline-none"
                     placeholder="+91 98765 43210"
                   />
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-sm font-bold text-gray-700">
+                  <label className="block mb-2 text-sm font-semibold text-gray-700">
                     Subject <span className="text-pink-600">*</span>
                   </label>
                   <input
@@ -287,28 +206,28 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-lg bg-gray-50 focus:bg-white focus:border-purple-600 focus:outline-none"
-                    placeholder="How can we help you?"
+                    className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-xl bg-gray-50 focus:bg-white focus:border-blue-500 focus:outline-none"
+                    placeholder="How can we help?"
                   />
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-sm font-bold text-gray-700">
-                    Message <span className="text-pink-600">*</span>
+                  <label className="block mb-2 text-sm font-semibold text-gray-700">
+                    Your Message <span className="text-pink-600">*</span>
                   </label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={5}
-                    className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-lg resize-none bg-gray-50 focus:bg-white focus:border-purple-600 focus:outline-none"
+                    rows={4}
+                    className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 resize-none rounded-xl bg-gray-50 focus:bg-white focus:border-blue-500 focus:outline-none"
                     placeholder="Tell us about your requirements..."
                   ></textarea>
                 </div>
 
                 <button
                   onClick={handleSubmit}
-                  className="flex items-center justify-center w-full gap-3 px-8 py-4 text-lg font-bold text-white transition-all duration-300 shadow-lg bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 rounded-xl hover:shadow-2xl hover:scale-105 group"
+                  className="flex items-center justify-center w-full gap-3 px-8 py-4 text-lg font-bold text-white transition-all duration-300 shadow-lg bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-xl hover:shadow-2xl hover:scale-105 group"
                 >
                   Send Message
                   <Send className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -316,27 +235,97 @@ const Contact = () => {
               </div>
             </div>
           </div>
+
+          {/* Map and Business Hours */}
+          <div className="space-y-8 fade-up">
+            {/* Map */}
+            <div className="overflow-hidden shadow-2xl rounded-3xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.8747684938494!2d70.1334!3d23.0833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA0JzU5LjkiTiA3MMKwMDgnMDAuMiJF!5e0!3m2!1sen!2sin!4v1234567890"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Bolia Associates Office Location"
+              ></iframe>
+            </div>
+
+            {/* Business Hours */}
+            <div className="relative p-8 overflow-hidden bg-white shadow-xl rounded-3xl">
+              <div className="absolute top-0 right-0 w-40 h-40 rounded-bl-full opacity-10 bg-gradient-to-br from-blue-600 to-purple-600"></div>
+              
+              <div className="relative flex items-start gap-4">
+                <div className="flex items-center justify-center flex-shrink-0 w-16 h-16 shadow-lg bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl">
+                  <Clock className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h4 className="mb-4 text-2xl font-bold text-gray-900">Business Hours</h4>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="font-semibold text-gray-700">Weekdays </span>
+                      <span className="ml-2 text-gray-600">9:00 AM - 6:00 PM</span>
+                    </div>
+                    {/* <div className="flex justify-between">
+                      <span className="font-semibold text-gray-700">Saturday</span>
+                      <span className="text-gray-600">10:00 AM - 4:00 PM</span>
+                    </div> */}
+                    <div className="flex justify-between">
+                      <span className="font-semibold text-gray-700">Sunday</span>
+                      <span className="text-gray-600">Closed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Google Map */}
-        <div ref={mapRef}>
-          <h3 className="mb-8 text-3xl font-bold text-center text-gray-900">
-            Find Us on Map
-          </h3>
-          <div className="overflow-hidden shadow-2xl rounded-2xl">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.8747684938494!2d70.1334!3d23.0833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA0JzU5LjkiTiA3MMKwMDgnMDAuMiJF!5e0!3m2!1sen!2sin!4v1234567890"
-              width="100%"
-              height="500"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Bolia Associates Office Location"
-            ></iframe>
+        {/* Bottom CTA */}
+        <div className="max-w-4xl mx-auto text-center fade-up">
+          <div className="p-10 bg-white shadow-2xl rounded-3xl">
+            <h3 className="mb-4 text-3xl font-bold text-gray-900">
+              Prefer to Meet in Person?
+            </h3>
+            <p className="mb-6 text-lg text-gray-600">
+              Visit our office during business hours for a face-to-face consultation. We're always happy to welcome you.
+            </p>
+            <div className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-blue-600 transition-all bg-blue-100 rounded-full hover:bg-blue-200">
+              <MapPin className="w-4 h-4" />
+              Office 09, P 597, Ward 12 C, Gandhidham, Gujarat
+            </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes blob {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+        
+        .fade-up {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-up.fade-in {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
     </section>
   );
 };

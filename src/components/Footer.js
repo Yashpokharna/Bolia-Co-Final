@@ -1,13 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import { 
-  Mail, 
-  Phone, 
   Facebook, 
   Twitter, 
   Linkedin, 
   Instagram,
   ArrowUpRight,
-  Sparkles
+  Sparkles,
+  Building2,
+  User,
+  Award,
+  MapPin
 } from 'lucide-react';
 
 const Footer = () => {
@@ -54,6 +56,13 @@ const Footer = () => {
     { icon: Twitter, href: '#', label: 'Twitter' },
     { icon: Instagram, href: '#', label: 'Instagram' },
     { icon: Facebook, href: '#', label: 'Facebook' }
+  ];
+
+  const companyInfo = [
+    { icon: Building2, label: 'Established', value: '2001' },
+    { icon: User, label: 'Founder', value: 'Gajendra Singh Bolia' },
+    { icon: Award, label: 'Sphere', value: 'Chartered Accountants (Since 1997)' },
+    { icon: MapPin, label: 'Headquarters', value: 'Gujarat (India)' }
   ];
 
   return (
@@ -136,14 +145,6 @@ const Footer = () => {
           transform: translateY(-4px);
         }
 
-        .contact-link {
-          transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-          transform: translateX(4px);
-        }
-
         @keyframes sparkle {
           0%, 100% { opacity: 0.5; transform: scale(1); }
           50% { opacity: 1; transform: scale(1.2); }
@@ -180,20 +181,22 @@ const Footer = () => {
                   Your Partner in Financial Excellence
                 </p>
                 
-                {/* Contact Info */}
-                <div className="flex flex-col gap-4 mt-8">
-                  <a href="mailto:hello@boliaco.com" className="inline-flex items-center gap-3 text-lg font-semibold text-gray-700 transition-colors contact-link hover:text-purple-600">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-purple-100 to-pink-100">
-                      <Mail className="w-5 h-5 text-purple-600" />
-                    </div>
-                    hello@boliaco.com
-                  </a>
-                  <a href="tel:+911234567890" className="inline-flex items-center gap-3 text-lg font-semibold text-gray-700 transition-colors contact-link hover:text-pink-600">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-pink-100 to-rose-100">
-                      <Phone className="w-5 h-5 text-pink-600" />
-                    </div>
-                    +91 123 456 7890
-                  </a>
+                {/* Company Info */}
+                <div className="grid grid-cols-1 gap-4 mt-8 sm:grid-cols-2">
+                  {companyInfo.map((info, idx) => {
+                    const Icon = info.icon;
+                    return (
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-purple-100 to-pink-100">
+                          <Icon className="w-5 h-5 text-purple-600" />
+                        </div>
+                        <div>
+                          <p className="text-xs font-semibold tracking-wider text-gray-500 uppercase">{info.label}</p>
+                          <p className="text-sm font-semibold text-gray-700">{info.value}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 

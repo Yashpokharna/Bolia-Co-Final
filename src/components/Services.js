@@ -187,14 +187,14 @@ const Services = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-6 text-white shadow-xl bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl">
+            <div className="grid grid-cols-1 gap-4">
+              {/* <div className="p-6 text-white shadow-xl bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl">
                 <p className="mb-1 text-4xl font-bold">500+</p>
                 <p className="text-sm text-blue-100">Clients Served</p>
-              </div>
-              <div className="p-6 text-white shadow-xl bg-gradient-to-br from-green-600 to-teal-600 rounded-2xl">
-                <p className="mb-1 text-4xl font-bold">20+</p>
-                <p className="text-sm text-green-100">Years Expertise</p>
+              </div> */}
+              <div className="flex items-center justify-center p-6 text-white shadow-xl bg-gradient-to-br from-green-600 to-teal-600 rounded-2xl">
+                <p className="mb-1 text-4xl font-bold">25+    </p>
+                <p className="ml-2 text-sm text-green-100">    Years Expertise</p>
               </div>
             </div>
           </div>
