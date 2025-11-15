@@ -95,7 +95,6 @@ const Contact = () => {
       id="contact"
       className="relative min-h-screen px-5 py-20 overflow-hidden md:px-16 bg-gradient-to-br from-gray-50 via-white to-blue-50"
     >
-      {/* Animated background blobs */}
       <div className="absolute rounded-full top-20 right-10 w-72 h-72 bg-gradient-to-br from-blue-400 to-purple-400 mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
       <div className="absolute rounded-full bottom-20 left-10 w-72 h-72 bg-gradient-to-br from-pink-400 to-orange-400 mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       <div className="absolute rounded-full top-1/2 left-1/2 w-72 h-72 bg-gradient-to-br from-green-400 to-cyan-400 mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
