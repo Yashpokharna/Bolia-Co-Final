@@ -27,10 +27,10 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", link: "#home" },
     { name: "About", link: "#about" },
-    { name: "Why Us", link: "#why-us" },
+    // { name: "Why Us", link: "#why-us" },
     { name: "Industries", link: "#industries" },
-    { name: "Resources", link: "#resources" },
-    { name: "Contact", link: "#contact" }
+    // { name: "Resources", link: "#resources" },
+    // { name: "Contact", link: "#contact" }
   ];
 
   const services = [

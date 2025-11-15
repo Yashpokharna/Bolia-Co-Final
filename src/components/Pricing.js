@@ -66,7 +66,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      content: ["Office 09, P 597, Ward 12 C,", "Gandhidham, Gujarat", "INDIA 370201"],
+      content: ["Bolia edge, Plot 147, Ward DC2, Ward 7, Gandhidham, Gujarat 370205"],
       gradient: "from-blue-500 to-cyan-500"
     },
     {
@@ -124,16 +124,16 @@ const Contact = () => {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${info.gradient} opacity-5 rounded-bl-full transition-opacity duration-300 group-hover:opacity-10`}></div>
-              
+
               <div className="relative">
                 <div className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br ${info.gradient} flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6`}>
                   {React.createElement(info.icon, {
                     className: "text-white w-8 h-8",
                   })}
                 </div>
-                
+
                 <h4 className="mb-3 text-lg font-bold text-gray-900">{info.title}</h4>
-                
+
                 <div className="space-y-1">
                   {info.content.map((line, i) => (
                     <p key={i} className="text-sm text-gray-600">{line}</p>
@@ -157,7 +157,7 @@ const Contact = () => {
               <div className="space-y-5">
                 <div>
                   <label className="block mb-2 text-sm font-semibold text-gray-700">
-                    Your Name <span className="text-pink-600">*</span>
+                    Your Name <span className="text-gray-600">*</span>
                   </label>
                   <input
                     type="text"
@@ -171,7 +171,7 @@ const Contact = () => {
 
                 <div>
                   <label className="block mb-2 text-sm font-semibold text-gray-700">
-                    Email Address <span className="text-pink-600">*</span>
+                    Email Address <span className="text-gray-600">*</span>
                   </label>
                   <input
                     type="email"
@@ -179,7 +179,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-xl bg-gray-50 focus:bg-white focus:border-blue-500 focus:outline-none"
-                    placeholder="john@example.com"
+                    placeholder="you@example.com"
                   />
                 </div>
 
@@ -199,7 +199,7 @@ const Contact = () => {
 
                 <div>
                   <label className="block mb-2 text-sm font-semibold text-gray-700">
-                    Subject <span className="text-pink-600">*</span>
+                    Subject <span className="text-gray-600">*</span>
                   </label>
                   <input
                     type="text"
@@ -213,7 +213,7 @@ const Contact = () => {
 
                 <div>
                   <label className="block mb-2 text-sm font-semibold text-gray-700">
-                    Your Message <span className="text-pink-600">*</span>
+                    Your Message <span className="text-gray-600">*</span>
                   </label>
                   <textarea
                     name="message"
@@ -240,22 +240,23 @@ const Contact = () => {
           <div className="space-y-8 fade-up">
             {/* Map */}
             <div className="overflow-hidden shadow-2xl rounded-3xl">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.8747684938494!2d70.1334!3d23.0833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA0JzU5LjkiTiA3MMKwMDgnMDAuMiJF!5e0!3m2!1sen!2sin!4v1234567890"
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Bolia Associates Office Location"
-              ></iframe>
-            </div>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.6973823932313!2d70.1140422!3d23.0776391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3950b98ac788745f%3A0x25b34de4c654a119!2sBolia%20and%20co!5e0!3m2!1sen!2sin!4v1731696200000!5m2!1sen!2sin"
+    width="100%"
+    height="400"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="Bolia Associates Office Location"
+  ></iframe>
+</div>
+
 
             {/* Business Hours */}
             <div className="relative p-8 overflow-hidden bg-white shadow-xl rounded-3xl">
               <div className="absolute top-0 right-0 w-40 h-40 rounded-bl-full opacity-10 bg-gradient-to-br from-blue-600 to-purple-600"></div>
-              
+
               <div className="relative flex items-start gap-4">
                 <div className="flex items-center justify-center flex-shrink-0 w-16 h-16 shadow-lg bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl">
                   <Clock className="w-8 h-8 text-white" />
@@ -293,7 +294,7 @@ const Contact = () => {
             </p>
             <div className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-blue-600 transition-all bg-blue-100 rounded-full hover:bg-blue-200">
               <MapPin className="w-4 h-4" />
-              Office 09, P 597, Ward 12 C, Gandhidham, Gujarat
+              Bolia edge, Plot 147, Ward DC2, Ward 7, Gandhidham, Gujarat 370205
             </div>
           </div>
         </div>

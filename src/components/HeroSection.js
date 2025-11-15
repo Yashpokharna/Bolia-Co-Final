@@ -205,8 +205,7 @@ const HeroSection = () => {
             <span className="font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
               Bolia&co
             </span>{" "}
-            empowers businesses with expert accounting, tax planning, and financial
-            strategies that drive sustainable growth and compliance excellence.
+            Connecting the dots across finance, strategy, and success to Simplifying complexity. to support their people with Building confidence in every decision you make.
           </p>
 
           {/* CTA Buttons */}
@@ -302,7 +301,7 @@ const HeroSection = () => {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path
+                  <path   
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
@@ -360,7 +359,7 @@ const HeroSection = () => {
                 className={`font-bold ${theme === "dark" ? "text-white" : "text-gray-900"
                   }`}
               >
-                Tax Advisory
+                Business Process Advisory
               </div>
             </div>
 
@@ -376,7 +375,7 @@ const HeroSection = () => {
                 className={`font-bold ${theme === "dark" ? "text-white" : "text-gray-900"
                   }`}
               >
-                Audit Services
+                Appeal's & Compilance
               </div>
             </div>
 
@@ -392,7 +391,7 @@ const HeroSection = () => {
                 className={`font-bold ${theme === "dark" ? "text-white" : "text-gray-900"
                   }`}
               >
-                Business Growth
+                Taxation
               </div>
             </div>
 
@@ -408,7 +407,7 @@ const HeroSection = () => {
                 className={`font-bold ${theme === "dark" ? "text-white" : "text-gray-900"
                   }`}
               >
-                Compliance
+                Audit
               </div>
             </div>
           </div>

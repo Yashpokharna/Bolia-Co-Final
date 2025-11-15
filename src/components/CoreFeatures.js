@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Building2, TrendingUp, Store, Home, Heart, GraduationCap, Coffee, Laptop, FileText, Download, BookOpen, Video, Star, Quote, Mail, Phone, MapPin, Calendar, Send, Linkedin, Twitter, Facebook, Instagram, Youtube, ArrowRight, CheckCircle2, Award, Users, Clock, MessageSquare } from "lucide-react";
+import { Building2, TrendingUp, Store, Home, Heart, GraduationCap, Coffee, Laptop, FileText, Download, BookOpen, Video, Star, Quote, Mail, Phone, MapPin, Calendar, Send, Linkedin, Twitter, Facebook, Instagram, Youtube, ArrowRight, CheckCircle2, Award, Users, Clock, MessageSquare, BanknoteIcon, ShipIcon } from "lucide-react";
 
 const IndustriesSection = () => {
   const [activeIndustry, setActiveIndustry] = useState(null);
@@ -10,7 +10,7 @@ const IndustriesSection = () => {
   const industries = [
     {
       icon: Building2,
-      title: "Manufacturing",
+      title: "Manufacturing & Consumer",
       desc: "Streamlined financial solutions for production units, inventory management, and cost optimization.",
       services: ["Cost Accounting", "Inventory Valuation", "GST Compliance", "Process Optimization"],
       gradient: "from-orange-500 via-red-500 to-rose-500",
@@ -34,7 +34,7 @@ const IndustriesSection = () => {
     },
     {
       icon: Home,
-      title: "Real Estate",
+      title: "Real Estate & Construction Oriented",
       desc: "Specialized services for developers, builders, and property management companies.",
       services: ["Project Accounting", "RERA Compliance", "Joint Ventures", "Tax Planning"],
       gradient: "from-green-500 via-emerald-500 to-teal-500",
@@ -49,24 +49,26 @@ const IndustriesSection = () => {
       // clients: "90+"
     },
     {
-      icon: GraduationCap,
-      title: "Education",
-      desc: "Financial solutions for schools, colleges, training institutes, and edtech companies.",
-      services: ["Trust Management", "Fee Collection", "Grant Accounting", "Audits"],
-      gradient: "from-indigo-500 via-blue-500 to-cyan-500",
-      // clients: "60+"
-    },
+  icon: ShipIcon,
+  title: "Shipping",
+  desc: "Financial solutions tailored for shipping companies, logistics providers, freight forwarders, and maritime businesses.",
+  services: ["Fleet Accounting", "Port & Customs Compliance", "Freight Billing", "Logistics Audits"],
+  gradient: "from-teal-500 via-cyan-500 to-blue-500",
+  // clients: "60+"
+},
+
     {
-      icon: Coffee,
-      title: "Hospitality",
-      desc: "Accounting and compliance for restaurants, hotels, cafes, and food service businesses.",
-      services: ["POS Integration", "FSSAI Compliance", "Franchise Setup", "Inventory"],
-      gradient: "from-amber-500 via-orange-500 to-red-500",
-      // clients: "70+"
-    },
+  icon: BanknoteIcon,
+  title: "Financial Services",
+  desc: "Comprehensive financial management, compliance, and advisory solutions for businesses across industries.",
+  services: ["Bookkeeping", "Tax & Compliance", "Financial Planning", "Cash Flow Management"],
+  gradient: "from-blue-600 via-indigo-600 to-purple-600",
+  // clients: "70+"
+},
+
     {
       icon: Laptop,
-      title: "IT & Software",
+      title: "IT & Digital Infrastructure",
       desc: "Tech-savvy solutions for software companies, IT services, and digital agencies.",
       services: ["Revenue Recognition", "R&D Tax Credits", "IP Valuation", "Global Ops"],
       gradient: "from-cyan-500 via-teal-500 to-green-500",

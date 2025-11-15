@@ -14,9 +14,9 @@ export default function Home() {
       <HeroSection />
       <Features />
       <Services />
-      <QualityFeatures />
+      {/* <QualityFeatures /> */}
       <CoreFeatures />
-      <Work />
+      {/* <Work /> */}
       <Pricing />
     </div>
   );

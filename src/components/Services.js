@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import DescriptionIcon from "@mui/icons-material/Description";
+import { SparklesIcon } from "lucide-react";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import CalculateIcon from "@mui/icons-material/Calculate";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
@@ -23,7 +23,7 @@ const Services = () => {
   const services = [
     {
       icon: CalculateIcon,
-      title: "Tax Consultation",
+      title: "Taxation",
       subtitle: "Strategic Tax Planning",
       desc: "Minimize tax liabilities with expert planning and compliance strategies tailored to your business.",
       color: "from-blue-500 to-cyan-500",
@@ -31,7 +31,7 @@ const Services = () => {
     },
     {
       icon: VerifiedUserIcon,
-      title: "Audit Services",
+      title: "Audit & Assurance",
       subtitle: "Certified Auditing",
       desc: "Comprehensive statutory and internal audits ensuring financial accuracy and regulatory compliance.",
       color: "from-purple-500 to-pink-500",
@@ -39,7 +39,7 @@ const Services = () => {
     },
     {
       icon: BusinessCenterIcon,
-      title: "Company Formation",
+      title: "Company Formation & Consulting",
       subtitle: "Business Registration",
       desc: "Complete support for company registration, partnership deeds, and business incorporation.",
       color: "from-green-500 to-emerald-500",
@@ -47,20 +47,21 @@ const Services = () => {
     },
     {
       icon: TrendingUpIcon,
-      title: "Financial Planning",
+      title: "Business & Advisory",
       subtitle: "Growth Advisory",
       desc: "Strategic financial advice for business growth, investments, and wealth management solutions.",
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50",
     },
     {
-      icon: DescriptionIcon,
-      title: "Accounting & Books",
-      subtitle: "Professional Bookkeeping",
-      desc: "Accurate bookkeeping, payroll management, and financial statement preparation for your business.",
-      color: "from-indigo-500 to-blue-500",
-      bgColor: "bg-indigo-50",
-    },
+  icon: SparklesIcon,
+  title: "Creative AI",
+  subtitle: "Innovative Content Generation",
+  desc: "AI-driven content creation, from branding and storytelling to dynamic visuals and marketing assets tailored to your vision.",
+  color: "from-purple-500 to-pink-500",
+  bgColor: "bg-purple-50",
+},
+
     {
       icon: AccountBalanceIcon,
       title: "GST & Compliance",
