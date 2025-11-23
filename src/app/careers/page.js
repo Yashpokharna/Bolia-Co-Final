@@ -50,7 +50,7 @@ export default function Careers() {
     {
       id: 1,
       title: 'Senior Tax Associate',
-      location: 'Ahmedabad',
+      location: 'Gandhidham',
       type: 'Full-time',
       mode: 'Hybrid',
       experience: '3-5 years',
@@ -60,7 +60,7 @@ export default function Careers() {
     {
       id: 2,
       title: 'Audit Manager',
-      location: 'Ahmedabad',
+      location: 'Gandhidham',
       type: 'Full-time',
       mode: 'On-site',
       experience: '5+ years',
@@ -70,7 +70,7 @@ export default function Careers() {
     {
       id: 3,
       title: 'GST Consultant',
-      location: 'Ahmedabad',
+      location: 'Gandhidham',
       type: 'Full-time',
       mode: 'Hybrid',
       experience: '2-4 years',
@@ -80,7 +80,7 @@ export default function Careers() {
     {
       id: 4,
       title: 'Accounts Executive',
-      location: 'Ahmedabad',
+      location: 'Gandhidham',
       type: 'Full-time',
       mode: 'Remote/Office',
       experience: '1-2 years',
@@ -179,26 +179,6 @@ export default function Careers() {
             Join a dynamic team where your expertise meets opportunity. We're
             looking for passionate professionals to grow with us.
           </p>
-
-          <a
-            href="mailto:careers@boliaco.com"
-            className="inline-flex items-center gap-3 px-8 py-4 text-lg font-bold text-white rounded-full shadow-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"
-          >
-            Send Your CV
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2.5}
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
-          </a>
         </div>
 
         {/* Job Listings */}
@@ -283,15 +263,11 @@ export default function Careers() {
               Don't See the Right Role?
             </h3>
             <p className="mb-4 text-gray-600">
-              We're always looking for talented professionals. Send us your CV
-              and we'll keep you in mind for future opportunities.
+              We're always looking for talented professionals. Send us your CV at{" "}
+              <a href="mailto:careers@boliaco.com" className="font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text">
+                careers@boliaco.com
+              </a>
             </p>
-            <a
-              href="mailto:careers@boliaco.com?subject=Speculative Application"
-              className="inline-flex items-center gap-2 px-6 py-3 font-semibold text-gray-900 border-2 rounded-full bg-gray-900/10 border-gray-900/20"
-            >
-              Submit Application
-            </a>
           </div>
         </div>
 
@@ -338,25 +314,6 @@ export default function Careers() {
                 careers@boliaco.com
               </a>
             </p>
-            <a
-              href="mailto:careers@boliaco.com"
-              className="inline-flex items-center gap-3 px-8 py-4 text-lg font-bold text-white rounded-full shadow-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"
-            >
-              Start Your Journey
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.5}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </a>
           </div>
         </div>
       </div>
