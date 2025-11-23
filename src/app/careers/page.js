@@ -1,26 +1,13 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
-import { useTheme } from "next-themes";
+import React, { useEffect, useRef } from 'react';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Careers() {
-  const { theme } = useTheme();
   const careerRef = useRef(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const { clientX, clientY } = e;
-      setMousePosition({ x: clientX, y: clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -144,20 +131,8 @@ export default function Careers() {
   return (
     <div
       ref={careerRef}
-      className={`min-h-screen py-20 ${
-        theme === "dark"
-          ? "bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900"
-          : "bg-gradient-to-br from-white via-blue-50 to-purple-50"
-      } relative overflow-hidden`}
+      className="relative min-h-screen py-20 overflow-hidden bg-gradient-to-br from-white via-blue-50 to-purple-50"
     >
-      {/* Interactive cursor effect */}
-      <div
-        className="fixed inset-0 z-0 pointer-events-none"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.1), transparent 40%)`,
-        }}
-      ></div>
-
       {/* Animated gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -184,13 +159,7 @@ export default function Careers() {
       <div className="container relative z-10 px-5 mx-auto max-w-7xl">
         {/* Hero Section */}
         <div className="mb-20 text-center career-hero">
-          <div className="inline-flex items-center gap-3 px-6 py-3 mb-6 border rounded-full shadow-lg backdrop-blur-xl"
-            className={`${
-              theme === "dark"
-                ? "bg-blue-500/10 border-blue-500/20 text-blue-300"
-                : "bg-blue-500/5 border-blue-500/20 text-blue-700"
-            }`}
-          >
+          <div className="inline-flex items-center gap-3 px-6 py-3 mb-6 text-blue-700 border rounded-full shadow-lg bg-blue-500/10 border-blue-500/30 backdrop-blur-xl">
             <span className="relative flex w-2.5 h-2.5">
               <span className="absolute inline-flex w-full h-full bg-blue-500 rounded-full opacity-75 animate-ping"></span>
               <span className="relative inline-flex w-2.5 h-2.5 bg-blue-500 rounded-full"></span>
@@ -198,11 +167,7 @@ export default function Careers() {
             <span className="text-sm font-bold tracking-widest">WE'RE HIRING</span>
           </div>
 
-          <h1
-            className={`text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6 ${
-              theme === "dark" ? "text-white" : "text-gray-900"
-            }`}
-          >
+          <h1 className="mb-6 text-5xl font-black leading-tight text-gray-900 sm:text-6xl lg:text-7xl">
             Build Your Career
             <br />
             <span className="text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text">
@@ -210,18 +175,14 @@ export default function Careers() {
             </span>
           </h1>
 
-          <p
-            className={`text-xl max-w-3xl mx-auto mb-8 ${
-              theme === "dark" ? "text-gray-300" : "text-gray-600"
-            }`}
-          >
+          <p className="max-w-3xl mx-auto mb-8 text-xl text-gray-600">
             Join a dynamic team where your expertise meets opportunity. We're
             looking for passionate professionals to grow with us.
           </p>
 
           <a
             href="mailto:careers@boliaco.com"
-            className="inline-flex items-center gap-3 px-8 py-4 text-lg font-bold text-white transition-all duration-500 rounded-full shadow-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-purple-500/50 hover:scale-110"
+            className="inline-flex items-center gap-3 px-8 py-4 text-lg font-bold text-white rounded-full shadow-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"
           >
             Send Your CV
             <svg
@@ -242,11 +203,7 @@ export default function Careers() {
 
         {/* Job Listings */}
         <div className="mb-20">
-          <h2
-            className={`text-3xl font-bold text-center mb-12 ${
-              theme === "dark" ? "text-white" : "text-gray-900"
-            }`}
-          >
+          <h2 className="mb-12 text-3xl font-bold text-center text-gray-900">
             Open Positions
           </h2>
 
@@ -254,78 +211,40 @@ export default function Careers() {
             {jobs.map((job) => (
               <div
                 key={job.id}
-                className={`job-card group p-8 rounded-3xl border backdrop-blur-xl transition-all duration-300 hover:scale-105 ${
-                  theme === "dark"
-                    ? "bg-white/5 border-white/10 hover:bg-white/10 hover:shadow-2xl hover:shadow-purple-500/20"
-                    : "bg-white/80 border-white/50 hover:bg-white hover:shadow-2xl hover:shadow-purple-500/20"
-                }`}
+                className="p-8 border shadow-xl job-card rounded-3xl bg-white/90 border-white/50 backdrop-blur-xl"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3
-                      className={`text-2xl font-bold mb-2 ${
-                        theme === "dark" ? "text-white" : "text-gray-900"
-                      }`}
-                    >
+                    <h3 className="mb-2 text-2xl font-bold text-gray-900">
                       {job.title}
                     </h3>
                     <div className="flex flex-wrap gap-2">
-                      <span
-                        className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                          theme === "dark"
-                            ? "bg-blue-500/20 text-blue-300"
-                            : "bg-blue-100 text-blue-700"
-                        }`}
-                      >
+                      <span className="px-3 py-1 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full">
                         📍 {job.location}
                       </span>
-                      <span
-                        className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                          theme === "dark"
-                            ? "bg-purple-500/20 text-purple-300"
-                            : "bg-purple-100 text-purple-700"
-                        }`}
-                      >
+                      <span className="px-3 py-1 text-sm font-semibold text-purple-700 bg-purple-100 rounded-full">
                         💼 {job.type}
                       </span>
-                      <span
-                        className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                          theme === "dark"
-                            ? "bg-pink-500/20 text-pink-300"
-                            : "bg-pink-100 text-pink-700"
-                        }`}
-                      >
+                      <span className="px-3 py-1 text-sm font-semibold text-pink-700 bg-pink-100 rounded-full">
                         🏢 {job.mode}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <p
-                  className={`mb-4 text-base leading-relaxed ${
-                    theme === "dark" ? "text-gray-300" : "text-gray-600"
-                  }`}
-                >
+                <p className="mb-4 text-base leading-relaxed text-gray-600">
                   {job.desc}
                 </p>
 
                 <div className="mb-6">
-                  <div
-                    className={`text-sm font-semibold mb-2 ${
-                      theme === "dark" ? "text-gray-400" : "text-gray-500"
-                    }`}
-                  >
+                  <div className="mb-2 text-sm font-semibold text-gray-500">
                     Experience: {job.experience}
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {job.skills.map((skill, idx) => (
                       <span
                         key={idx}
-                        className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          theme === "dark"
-                            ? "bg-white/5 text-gray-300 border border-white/10"
-                            : "bg-gray-100 text-gray-700 border border-gray-200"
-                        }`}
+                        className="px-3 py-1 text-xs font-medium text-gray-700 bg-gray-100 border border-gray-200 rounded-full"
                       >
                         {skill}
                       </span>
@@ -337,7 +256,7 @@ export default function Careers() {
                   href={`mailto:careers@boliaco.com?subject=Application for ${encodeURIComponent(
                     job.title
                   )}`}
-                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white transition-all duration-300 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-lg hover:scale-105"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white rounded-full shadow-lg bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"
                 >
                   Apply Now
                   <svg
@@ -359,35 +278,17 @@ export default function Careers() {
           </div>
 
           {/* Speculative Applications */}
-          <div
-            className={`mt-10 p-8 rounded-3xl border backdrop-blur-xl text-center ${
-              theme === "dark"
-                ? "bg-white/5 border-white/10"
-                : "bg-white/80 border-white/50"
-            }`}
-          >
-            <h3
-              className={`text-xl font-bold mb-3 ${
-                theme === "dark" ? "text-white" : "text-gray-900"
-              }`}
-            >
+          <div className="p-8 mt-10 text-center border shadow-xl rounded-3xl bg-white/90 border-white/50 backdrop-blur-xl">
+            <h3 className="mb-3 text-xl font-bold text-gray-900">
               Don't See the Right Role?
             </h3>
-            <p
-              className={`mb-4 ${
-                theme === "dark" ? "text-gray-300" : "text-gray-600"
-              }`}
-            >
+            <p className="mb-4 text-gray-600">
               We're always looking for talented professionals. Send us your CV
               and we'll keep you in mind for future opportunities.
             </p>
             <a
               href="mailto:careers@boliaco.com?subject=Speculative Application"
-              className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                theme === "dark"
-                  ? "bg-white/10 text-white hover:bg-white/20"
-                  : "bg-gray-900/10 text-gray-900 hover:bg-gray-900/20"
-              } border-2 border-white/20`}
+              className="inline-flex items-center gap-2 px-6 py-3 font-semibold text-gray-900 border-2 rounded-full bg-gray-900/10 border-gray-900/20"
             >
               Submit Application
             </a>
@@ -396,11 +297,7 @@ export default function Careers() {
 
         {/* Why Join Us */}
         <div className="mb-20 perks-section">
-          <h2
-            className={`text-3xl font-bold text-center mb-12 ${
-              theme === "dark" ? "text-white" : "text-gray-900"
-            }`}
-          >
+          <h2 className="mb-12 text-3xl font-bold text-center text-gray-900">
             Why Join Bolia & Co?
           </h2>
 
@@ -408,29 +305,17 @@ export default function Careers() {
             {perks.map((perk, idx) => (
               <div
                 key={idx}
-                className={`perk-item group p-6 rounded-2xl border backdrop-blur-xl transition-all duration-300 hover:scale-105 ${
-                  theme === "dark"
-                    ? "bg-white/5 border-white/10 hover:bg-white/10"
-                    : "bg-white/80 border-white/50 hover:bg-white hover:shadow-xl"
-                }`}
+                className="p-6 border shadow-lg perk-item rounded-2xl bg-white/90 border-white/50 backdrop-blur-xl"
               >
                 <div
-                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${perk.gradient} flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${perk.gradient} flex items-center justify-center text-3xl mb-4`}
                 >
                   {perk.icon}
                 </div>
-                <h3
-                  className={`text-lg font-bold mb-2 ${
-                    theme === "dark" ? "text-white" : "text-gray-900"
-                  }`}
-                >
+                <h3 className="mb-2 text-lg font-bold text-gray-900">
                   {perk.title}
                 </h3>
-                <p
-                  className={`text-sm ${
-                    theme === "dark" ? "text-gray-300" : "text-gray-600"
-                  }`}
-                >
+                <p className="text-sm text-gray-600">
                   {perk.desc}
                 </p>
               </div>
@@ -440,25 +325,11 @@ export default function Careers() {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div
-            className={`inline-block p-10 rounded-3xl border backdrop-blur-xl ${
-              theme === "dark"
-                ? "bg-gradient-to-br from-blue-500/10 to-purple-500/10 border-white/10"
-                : "bg-gradient-to-br from-blue-50 to-purple-50 border-white/50"
-            }`}
-          >
-            <h2
-              className={`text-3xl font-black mb-4 ${
-                theme === "dark" ? "text-white" : "text-gray-900"
-              }`}
-            >
+          <div className="inline-block p-10 border shadow-xl rounded-3xl bg-gradient-to-br from-blue-50 to-purple-50 border-white/50 backdrop-blur-xl">
+            <h2 className="mb-4 text-3xl font-black text-gray-900">
               Ready to Make an Impact?
             </h2>
-            <p
-              className={`text-lg mb-6 max-w-xl ${
-                theme === "dark" ? "text-gray-300" : "text-gray-600"
-              }`}
-            >
+            <p className="max-w-xl mb-6 text-lg text-gray-600">
               Send your CV to{" "}
               <a
                 href="mailto:careers@boliaco.com"
@@ -469,7 +340,7 @@ export default function Careers() {
             </p>
             <a
               href="mailto:careers@boliaco.com"
-              className="inline-flex items-center gap-3 px-8 py-4 text-lg font-bold text-white transition-all duration-500 rounded-full shadow-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:shadow-purple-500/50 hover:scale-110"
+              className="inline-flex items-center gap-3 px-8 py-4 text-lg font-bold text-white rounded-full shadow-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"
             >
               Start Your Journey
               <svg
