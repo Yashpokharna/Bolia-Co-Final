@@ -1,3 +1,4 @@
+// Navbar.tsx (UPDATED)
 import React, { useEffect, useRef, useState } from 'react';
 import { 
   Menu,
@@ -192,14 +193,14 @@ const Navbar = () => {
             ))}
 
             {/* ✅ Careers as button */}
-            {/* <li>
+            <li>
               <a
                 href="/careers"
                 className="px-5 py-2 ml-2 text-sm font-semibold text-white transition-all duration-300 rounded-full shadow-md bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-lg hover:opacity-90"
               >
                 Careers
               </a>
-            </li> */}
+            </li>
 
             {/* Contact */}
             <li>
@@ -281,8 +282,8 @@ const Navbar = () => {
             <li><a href="#industries" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Industries</a></li>
             <li><a href="#resources" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Resources</a></li>
             
-            {/* ✅ Careers as gradient button */}
-            {/* <li>
+            {/* ✅ Careers as gradient button (mobile) */}
+            <li>
               <a
                 href="/careers"
                 className="block px-4 py-3 text-sm font-semibold text-center text-white transition-all duration-300 rounded-full shadow-md bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-lg hover:opacity-90"
@@ -290,7 +291,7 @@ const Navbar = () => {
               >
                 Careers
               </a>
-            </li> */}
+            </li>
 
             <li><a href="#contact" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Contact</a></li>
           </ul>
@@ -314,3 +315,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
