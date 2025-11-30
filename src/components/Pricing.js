@@ -75,12 +75,12 @@ const Contact = () => {
       content: ["+91 2836233033", "+91 9104402201"],
       gradient: "from-purple-500 to-pink-500"
     },
-    {
-      icon: Mail,
-      title: "Email Us",
-      content: ["associatesbolia@gmail.com"],
-      gradient: "from-green-500 to-emerald-500"
-    },
+    // {
+    //   icon: Mail,
+    //   title: "Email Us",
+    //   content: ["associatesbolia@gmail.com"],
+    //   gradient: "from-green-500 to-emerald-500"
+    // },
     {
       icon: Globe,
       title: "Website",
@@ -115,7 +115,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Info Grid */}
-        <div className="grid max-w-6xl gap-6 mx-auto mb-20 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid max-w-6xl gap-6 mx-auto mb-20 md:grid-cols-3 lg:grid-cols-3">
           {contactInfo.map((info, index) => (
             <div
               key={index}
