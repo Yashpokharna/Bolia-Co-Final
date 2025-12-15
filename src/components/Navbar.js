@@ -35,12 +35,12 @@ const Navbar = () => {
   ];
 
   const services = [
-    { name: "Tax Planning", icon: "📊" },
-    { name: "Audit Services", icon: "✓" },
+    { name: "Tax", icon: "📊" },
+    { name: "Audit", icon: "✓" },
     { name: "GST Compliance", icon: "📋" },
     { name: "Business Advisory", icon: "📈" },
     { name: "Company Registration", icon: "🏢" },
-    { name: "Financial Planning", icon: "💰" }
+    { name: "Financial Advisory", icon: "💰" }
   ];
 
   return (
