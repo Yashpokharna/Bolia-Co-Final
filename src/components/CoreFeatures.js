@@ -52,7 +52,7 @@ const IndustriesSection = () => {
   icon: ShipIcon,
   title: "Shipping",
   desc: "Financial solutions tailored for shipping companies, logistics providers, freight forwarders, and maritime businesses.",
-  services: ["Fleet Accounting", "Port & Customs Compliance", "Freight Billing", "Logistics Audits"],
+  services: ["Port & Customs Compliance", "Freight Billing", "Logistics Audits"],
   gradient: "from-teal-500 via-cyan-500 to-blue-500",
   // clients: "60+"
 },
