@@ -12,7 +12,7 @@ const IndustriesSection = () => {
       icon: Building2,
       title: "Manufacturing & Consumer",
       desc: "Streamlined financial solutions for production units, inventory management, and cost optimization.",
-      services: ["Cost Accounting", "Inventory Valuation", "GST Compliance", "Process Optimization"],
+      services: ["Inventory Valuation", "GST Compliance", "Process Optimization"],
       gradient: "from-orange-500 via-red-500 to-rose-500",
       // clients: "150+"
     },
@@ -28,7 +28,7 @@ const IndustriesSection = () => {
       icon: Store,
       title: "Retail & E-commerce",
       desc: "Comprehensive solutions for multi-channel businesses, online marketplaces, and retail chains.",
-      services: ["E-commerce Accounting", "Multi-state GST", "Payment Gateway", "Analytics"],
+      services: ["Multi-state GST", "Payment Gateway", "Analytics"],
       gradient: "from-purple-500 via-pink-500 to-rose-500",
       // clients: "120+"
     },
@@ -36,7 +36,7 @@ const IndustriesSection = () => {
       icon: Home,
       title: "Real Estate & Construction Oriented",
       desc: "Specialized services for developers, builders, and property management companies.",
-      services: ["Project Accounting", "RERA Compliance", "Joint Ventures", "Tax Planning"],
+      services: ["RERA Compliance", "Joint Ventures", "Tax Planning"],
       gradient: "from-green-500 via-emerald-500 to-teal-500",
       // clients: "80+"
     },
@@ -112,7 +112,7 @@ const IndustriesSection = () => {
           </div>
           
           <h2 className="mb-6 text-5xl font-black leading-tight text-gray-900 sm:text-6xl md:text-7xl">
-            Specialized Expertise
+            Specializing
             <span className="block mt-2 text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text">
               For Every Sector
             </span>
