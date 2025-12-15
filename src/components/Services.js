@@ -10,6 +10,7 @@ import CalculateIcon from "@mui/icons-material/Calculate";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ShirtIconIcon from "@mui/icons-material/ArrowForward";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,6 +70,14 @@ const Services = () => {
       desc: "From getting started to complete regularised filling with necessary requirements.",
       color: "from-teal-500 to-cyan-500",
       bgColor: "bg-teal-50",
+    },
+    {
+      icon: ShirtIconIcon,
+      title: "Appeal's",
+      subtitle: "Appeals",
+      desc: "Our end to end tax litigation services in field’s of Direct and Indirect Taxation. IT appeal | Gst apeal & its ancillaries.",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-50",
     },
   ];
 
