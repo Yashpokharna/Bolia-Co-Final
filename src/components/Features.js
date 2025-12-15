@@ -94,11 +94,11 @@ const AboutUs = () => {
         {/* Main Story Section */}
         <div className="max-w-4xl mx-auto mb-24 space-y-8 text-center fade-up">
           <p className="text-2xl font-light leading-relaxed text-gray-800 md:text-3xl">
-            We're not just accountants—we're your{" "}
+            At Bolia & Co, {" "}
             <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              strategic financial partners
+              We Make a Difference {" "}
             </span>
-            , dedicated to simplifying complexity and driving your success.
+             that delivers real value with purpose.
           </p>
           
           {/* <div className="pt-8 space-y-6">
