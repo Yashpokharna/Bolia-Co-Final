@@ -101,52 +101,45 @@ const AboutUs = () => {
              that delivers real value with purpose.
           </p>
           
-          {/* <div className="pt-8 space-y-6">
+          <div className="pt-8 space-y-6">
             <p className="text-lg leading-relaxed text-gray-600 md:text-xl">
-              Born from a vision to transform how businesses approach financial management, 
-              we've built our practice on a foundation of trust, expertise, and genuine partnership. 
-              We don't just handle numbers—we unlock insights, identify opportunities, and craft 
-              strategies that propel your business forward.
+              For over 22 years, We have worked with Visionaries across the world - We are a Charted Accountant Firm to support their visions. 
             </p>
-            
-            <p className="text-lg leading-relaxed text-gray-600 md:text-xl">
-              Every client has a unique story, and we believe your financial guidance should 
-              reflect that individuality. Whether you're navigating tax complexities, seeking 
-              growth strategies, or ensuring compliance, we're here with clarity, precision, 
-              and unwavering support.
-            </p>
-          </div> */}
+          </div>
         </div>
 
-        {/* Split Vision/Mission */}
-        <div className="grid gap-12 mb-24 md:grid-cols-2 md:gap-16">
+        {/* Founder Info Card */}
+        <div className="max-w-4xl mx-auto mb-24">
           <div className="relative p-12 overflow-hidden bg-white shadow-xl fade-up rounded-3xl">
             <div className="absolute top-0 right-0 w-40 h-40 rounded-bl-full opacity-10 bg-gradient-to-br from-blue-600 to-purple-600"></div>
-            <div className="relative">
-              <div className="inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl">
-                <Target className="w-8 h-8 text-white" />
+            <div className="relative flex flex-col items-center gap-8 md:flex-row md:items-start">
+              {/* Founder Photo */}
+              <div className="relative flex-shrink-0 group">
+                <div className="absolute inset-0 transition-opacity opacity-50 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl blur-xl group-hover:opacity-75"></div>
+                <div className="relative w-48 h-48 overflow-hidden shadow-2xl md:w-56 md:h-56 rounded-2xl">
+                  <img
+                    src="/features/ca.jpg"
+                    alt="Founder"
+                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
               </div>
-              <h3 className="mb-4 text-3xl font-bold text-gray-900">Our Mission</h3>
-              <p className="text-lg leading-relaxed text-gray-600">
-                To empower businesses with transparent, innovative financial solutions that 
-                drive sustainable growth. We're committed to making financial excellence 
-                accessible, understandable, and achievable for every client we serve.
-              </p>
-            </div>
-          </div>
 
-          <div className="relative p-12 overflow-hidden bg-white shadow-xl fade-up rounded-3xl">
-            <div className="absolute top-0 right-0 w-40 h-40 rounded-bl-full opacity-10 bg-gradient-to-br from-green-600 to-teal-600"></div>
-            <div className="relative">
-              <div className="inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg bg-gradient-to-br from-green-600 to-teal-600 rounded-2xl">
-                <Sparkles className="w-8 h-8 text-white" />
+              {/* Founder Info */}
+              <div className="flex-1 text-center md:text-left">
+                <div className="inline-flex items-center justify-center w-12 h-12 mb-4 shadow-lg bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="mb-2 text-3xl font-bold text-gray-900 md:text-4xl">Meet Our Founder</h3>
+                <p className="mb-4 text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  CA. Gajendra Bolia
+                </p>
+                <p className="mb-4 text-lg leading-relaxed text-gray-600">
+                  With over 25 years of experience in financial advisory and chartered accountancy, 
+                  our founder established Bolia & Co with a vision to provide world-class financial 
+                  solutions with integrity and innovation.
+                </p>
               </div>
-              <h3 className="mb-4 text-3xl font-bold text-gray-900">Our Vision</h3>
-              <p className="text-lg leading-relaxed text-gray-600">
-                To be recognized as the most trusted financial advisory partner, known for 
-                transforming complexity into clarity. We envision a future where every business, 
-                regardless of size, has access to world-class financial guidance.
-              </p>
             </div>
           </div>
         </div>
