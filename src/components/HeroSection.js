@@ -65,11 +65,10 @@ const HeroSection = () => {
   return (
     <section
       ref={heroRef}
-      className={`${
-        theme === "dark"
+      className={`${theme === "dark"
           ? "bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900"
           : "bg-gradient-to-br from-white via-blue-50 to-purple-50"
-      } relative overflow-hidden min-h-screen flex items-center justify-center px-5`}
+        } relative overflow-hidden min-h-screen flex items-center justify-center px-5`}
       id="home"
     >
       {/* Interactive cursor effect */}
@@ -121,26 +120,34 @@ const HeroSection = () => {
       <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
-          backgroundImage: `linear-gradient(${
-            theme === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"
-          } 1px, transparent 1px), linear-gradient(90deg, ${
-            theme === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"
-          } 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(${theme === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"
+            } 1px, transparent 1px), linear-gradient(90deg, ${theme === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"
+            } 1px, transparent 1px)`,
           backgroundSize: "100px 100px",
         }}
       ></div>
 
+
+
       {/* Main centered content */}
       <div className="container relative z-10 max-w-5xl mx-auto text-center">
+
+        <p
+          className={`text-xl mb-7 sm:text-2xl leading-relaxed max-w-3xl mx-auto hero-subtitle ${theme === "dark" ? "text-gray-300" : "text-gray-600"
+            }`}
+        >
+          Intelea Connect's. That's what we do.
+        </p>
+
+
         <div className="space-y-10">
           {/* Badge */}
           <div className="flex justify-center hero-badge">
             <div
-              className={`inline-flex items-center gap-3 px-6 py-3 rounded-full border ${
-                theme === "dark"
+              className={`inline-flex items-center gap-3 px-6 py-3 rounded-full border ${theme === "dark"
                   ? "bg-blue-500/10 border-blue-500/20 text-blue-300"
                   : "bg-blue-500/5 border-blue-500/20 text-blue-700"
-              } backdrop-blur-xl shadow-2xl`}
+                } backdrop-blur-xl shadow-2xl`}
             >
               <span className="relative flex w-2.5 h-2.5">
                 <span className="absolute inline-flex w-full h-full bg-blue-500 rounded-full opacity-75 animate-ping"></span>
@@ -152,12 +159,13 @@ const HeroSection = () => {
             </div>
           </div>
 
+
+
           {/* Main Heading */}
           <div className="space-y-6 hero-title">
             <h1
-              className={`text-6xl sm:text-6xl lg:text-6xl xl:text-6xl font-black leading-[1.1] ${
-                theme === "dark" ? "text-white" : "text-gray-900"
-              }`}
+              className={`text-6xl sm:text-6xl lg:text-6xl xl:text-6xl font-black leading-[1.1] ${theme === "dark" ? "text-white" : "text-gray-900"
+                }`}
             >
               We Connect The Financial Dots
               <br />
@@ -172,15 +180,11 @@ const HeroSection = () => {
 
           {/* Description */}
           <p
-            className={`text-xl sm:text-2xl leading-relaxed max-w-3xl mx-auto hero-subtitle ${
-              theme === "dark" ? "text-gray-300" : "text-gray-600"
-            }`}
+            className={`text-xl sm:text-2xl leading-relaxed max-w-3xl mx-auto hero-subtitle ${theme === "dark" ? "text-gray-300" : "text-gray-600"
+              }`}
           >
             Simplifying complexity, Building confidence in every financial
-            decision you make with{" "}
-            <span className="font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text">
-              Bolia&co
-            </span>
+            decision you make.
           </p>
 
           {/* CTA Buttons */}
@@ -218,13 +222,11 @@ const HeroSection = () => {
                   .querySelector("#services")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className={`group px-10 py-5 ${
-                theme === "dark"
+              className={`group px-10 py-5 ${theme === "dark"
                   ? "bg-white/5 text-white hover:bg-white/10"
                   : "bg-gray-900/5 text-gray-900 hover:bg-gray-900/10"
-              } backdrop-blur-xl border-2 ${
-                theme === "dark" ? "border-white/10" : "border-gray-900/10"
-              } rounded-full font-bold text-lg transition-all duration-500 hover:scale-110 hover:-translate-y-1 hover:border-purple-500/50`}
+                } backdrop-blur-xl border-2 ${theme === "dark" ? "border-white/10" : "border-gray-900/10"
+                } rounded-full font-bold text-lg transition-all duration-500 hover:scale-110 hover:-translate-y-1 hover:border-purple-500/50`}
             >
               <span className="flex items-center gap-3">
                 Explore Services
@@ -246,7 +248,7 @@ const HeroSection = () => {
           </div>
 
           {/* Minimal stats */}
-          <div className="flex items-center justify-center gap-12 pt-12 hero-subtitle">
+          {/* <div className="flex items-center justify-center gap-12 pt-12 hero-subtitle">
             <div className="text-center">
               <div
                 className={`text-4xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`}
@@ -254,17 +256,15 @@ const HeroSection = () => {
                 20+
               </div>
               <div
-                className={`text-sm font-medium mt-1 ${
-                  theme === "dark" ? "text-gray-500" : "text-gray-600"
-                }`}
+                className={`text-sm font-medium mt-1 ${theme === "dark" ? "text-gray-500" : "text-gray-600"
+                  }`}
               >
                 Years
               </div>
             </div>
             <div
-              className={`w-px h-12 ${
-                theme === "dark" ? "bg-white/10" : "bg-gray-900/10"
-              }`}
+              className={`w-px h-12 ${theme === "dark" ? "bg-white/10" : "bg-gray-900/10"
+                }`}
             ></div>
             <div className="text-center">
               <div
@@ -273,17 +273,15 @@ const HeroSection = () => {
                 500+
               </div>
               <div
-                className={`text-sm font-medium mt-1 ${
-                  theme === "dark" ? "text-gray-500" : "text-gray-600"
-                }`}
+                className={`text-sm font-medium mt-1 ${theme === "dark" ? "text-gray-500" : "text-gray-600"
+                  }`}
               >
                 Clients
               </div>
             </div>
             <div
-              className={`w-px h-12 ${
-                theme === "dark" ? "bg-white/10" : "bg-gray-900/10"
-              }`}
+              className={`w-px h-12 ${theme === "dark" ? "bg-white/10" : "bg-gray-900/10"
+                }`}
             ></div>
             <div className="text-center">
               <div
@@ -292,16 +290,15 @@ const HeroSection = () => {
                 100%
               </div>
               <div
-                className={`text-sm font-medium mt-1 ${
-                  theme === "dark" ? "text-gray-500" : "text-gray-600"
-                }`}
+                className={`text-sm font-medium mt-1 ${theme === "dark" ? "text-gray-500" : "text-gray-600"
+                  }`}
               >
                 Success
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
-      </div>
+      </div> 
 
       {/* Scroll indicator */}
       {/* <div className="absolute transform -translate-x-1/2 bottom-10 left-1/2">
@@ -325,15 +322,14 @@ const HeroSection = () => {
             ></div>
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Floating particles */}
       {[...Array(20)].map((_, i) => (
         <div
           key={i}
-          className={`absolute w-1 h-1 ${
-            theme === "dark" ? "bg-white/20" : "bg-gray-900/10"
-          } rounded-full animate-pulse`}
+          className={`absolute w-1 h-1 ${theme === "dark" ? "bg-white/20" : "bg-gray-900/10"
+            } rounded-full animate-pulse`}
           style={{
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
