@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import { ShirtIcon, SparklesIcon } from "lucide-react";
+import { ChartBarIcon, SparklesIcon } from "lucide-react";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import CalculateIcon from "@mui/icons-material/Calculate";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
@@ -72,7 +72,7 @@ const Services = () => {
       bgColor: "bg-teal-50",
     },
     {
-      icon: ShirtIcon,
+      icon: ChartBarIcon,
       title: "Appeal's",
       subtitle: "Appeals",
       desc: "Our end to end tax litigation services in field’s of Direct and Indirect Taxation. IT appeal | Gst apeal & its ancillaries.",

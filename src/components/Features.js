@@ -115,7 +115,7 @@ const AboutUs = () => {
             <div className="relative flex flex-col items-center gap-8 md:flex-row md:items-start">
               {/* Founder Photo */}
               <div className="relative flex-shrink-0 group">
-                <div className="absolute inset-0 transition-opacity opacity-50 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl blur-xl group-hover:opacity-75"></div>
+                <div className="absolute inset-0 transition-opacity opacity-50 rounded-2xl blur-xl group-hover:opacity-75"></div>
                 <div className="relative w-48 h-48 overflow-hidden shadow-2xl md:w-56 md:h-56 rounded-2xl">
                   <img
                     src="/features/ca.jpg"
@@ -134,11 +134,11 @@ const AboutUs = () => {
                 <p className="mb-4 text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                   CA. Gajendra Bolia
                 </p>
-                <p className="mb-4 text-lg leading-relaxed text-gray-600">
+                {/* <p className="mb-4 text-lg leading-relaxed text-gray-600">
                   With over 25 years of experience in financial advisory and chartered accountancy, 
                   our founder established Bolia & Co with a vision to provide world-class financial 
                   solutions with integrity and innovation.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
