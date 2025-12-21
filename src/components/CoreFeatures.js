@@ -36,7 +36,7 @@ const IndustriesSection = () => {
       icon: Home,
       title: "Real Estate & Construction Oriented",
       desc: "Specialized services for developers, builders, and property management companies.",
-      services: ["RERA Compliance", "Joint Ventures", "Tax Planning"],
+      services: ["RERA Compliance", "Joint Ventures"],
       gradient: "from-green-500 via-emerald-500 to-teal-500",
       // clients: "80+"
     },
@@ -52,7 +52,7 @@ const IndustriesSection = () => {
   icon: ShipIcon,
   title: "Shipping",
   desc: "Financial solutions tailored for shipping companies, logistics providers, freight forwarders, and maritime businesses.",
-  services: ["Port & Customs Compliance", "Freight Billing", "Logistics Audits"],
+  services: ["Port & Customs Compliance", "Logistics Audits"],
   gradient: "from-teal-500 via-cyan-500 to-blue-500",
   // clients: "60+"
 },
@@ -61,7 +61,7 @@ const IndustriesSection = () => {
   icon: BanknoteIcon,
   title: "Financial Services",
   desc: "Comprehensive financial management, compliance, and advisory solutions for businesses across industries.",
-  services: ["Bookkeeping", "Tax & Compliance", "Financial Planning", "Cash Flow Management"],
+  services: ["Tax & Compliance", "Cash Flow Management"],
   gradient: "from-blue-600 via-indigo-600 to-purple-600",
   // clients: "70+"
 },

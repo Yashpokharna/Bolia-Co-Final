@@ -75,12 +75,12 @@ const Contact = () => {
       content: ["+91 2836233033", "+91 9104402201"],
       gradient: "from-purple-500 to-pink-500"
     },
-    {
-      icon: Mail,
-      title: "Email Us",
-      content: ["clients@bolia.co.in"],
-      gradient: "from-green-500 to-emerald-500"
-    },
+    // {
+    //   icon: Mail,
+    //   title: "Email Us",
+    //   content: ["clients@bolia.co.in"],
+    //   gradient: "from-green-500 to-emerald-500"
+    // },
     {
       icon: Globe,
       title: "Website",
@@ -115,7 +115,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Info Grid */}
-        <div className="grid max-w-6xl gap-6 mx-auto mb-20 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid max-w-6xl gap-6 mx-auto mb-20 md:grid-cols-2 lg:grid-cols-3">
           {contactInfo.map((info, index) => (
             <div
               key={index}
@@ -164,7 +164,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-xl bg-gray-50 focus:bg-white focus:border-blue-500 focus:outline-none"
-                    placeholder="John Doe"
+                    placeholder="Bolia & Co"
                   />
                 </div>
 
@@ -178,7 +178,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-xl bg-gray-50 focus:bg-white focus:border-blue-500 focus:outline-none"
-                    placeholder="you@example.com"
+                    placeholder="clients@bolia.co.in"
                   />
                 </div>
 
@@ -192,7 +192,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 text-gray-900 transition-all border-2 border-gray-200 rounded-xl bg-gray-50 focus:bg-white focus:border-blue-500 focus:outline-none"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 2836 233033"
                   />
                 </div>
 
