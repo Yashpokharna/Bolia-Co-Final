@@ -247,7 +247,7 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-purple-600 sparkle-icon" />
                 <p className="text-gray-600">
-                  © 2025 Bolia & Co. Crafted with excellence
+                  © 2026 Bolia & Co. Crafted with excellence
                 </p>
               </div>
               

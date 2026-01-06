@@ -133,7 +133,7 @@ const HeroSection = () => {
       <div className="container relative z-10 max-w-5xl mx-auto text-center">
 
         <p
-          className={`text-xl mb-7 sm:text-2xl leading-relaxed max-w-3xl mx-auto hero-subtitle ${theme === "dark" ? "text-gray-300" : "text-gray-600"
+          className={`text-xl mb-3 sm:text-2xl leading-relaxed max-w-3xl mx-auto hero-subtitle ${theme === "dark" ? "text-gray-300" : "text-gray-600"
             }`}
         >
           Intelea Connect's. That's what we do.
