@@ -1,5 +1,6 @@
 // Navbar.tsx (UPDATED)
 import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import { 
   Menu,
   X,
@@ -116,7 +117,7 @@ const Navbar = () => {
       >
         <div className="container flex items-center justify-between px-5 mx-auto md:px-16 max-w-7xl">
           {/* Logo */}
-          <a href="/" className="relative z-50 transition-transform duration-300 hover:scale-105">
+          <Link href="/" className="relative z-50 transition-transform duration-300 hover:scale-105">
             <div className="flex items-center gap-2">
               <div className="relative">
                 <div className="flex items-center gap-3">
@@ -136,19 +137,19 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
           <ul className="items-center hidden gap-1 lg:flex">
             {/* Home, About */}
             {navItems.slice(0, 2).map((item) => (
               <li key={item.name}>
-                <a
+                <Link
                   href={item.link}
                   className="px-4 py-2 text-sm font-semibold text-gray-700 transition-colors nav-link hover:text-purple-600"
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
 
@@ -166,15 +167,15 @@ const Navbar = () => {
               {servicesOpen && (
                 <div className="absolute left-0 w-64 p-2 mt-2 bg-white border border-gray-100 shadow-2xl top-full rounded-2xl dropdown-enter">
                   {services.map((service) => (
-                    <a
+                    <Link
                       key={service.name}
-                      href="#services"
+                      href="/#services"
                       className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-700 transition-all duration-200 rounded-xl hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600 group"
                     >
                       <span className="text-xl">{service.icon}</span>
                       <span>{service.name}</span>
                       <ArrowRight className="w-4 h-4 ml-auto transition-transform opacity-0 group-hover:opacity-100 group-hover:translate-x-1" />
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -183,33 +184,33 @@ const Navbar = () => {
             {/* Why Us, Industries, Resources */}
             {navItems.slice(2, 5).map((item) => (
               <li key={item.name}>
-                <a
+                <Link
                   href={item.link}
                   className="px-4 py-2 text-sm font-semibold text-gray-700 transition-colors nav-link hover:text-purple-600"
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
 
             {/* ✅ Careers as button */}
             <li>
-              <a
+              <Link
                 href="/careers"
                 className="px-5 py-2 ml-2 text-sm font-semibold text-white transition-all duration-300 rounded-full shadow-md bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-lg hover:opacity-90"
               >
                 Careers
-              </a>
+              </Link>
             </li>
 
             {/* Contact */}
             <li>
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 className="px-4 py-2 text-sm font-semibold text-gray-700 transition-colors nav-link hover:text-purple-600"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -258,42 +259,42 @@ const Navbar = () => {
 
           {/* Mobile Menu Items */}
           <ul className="p-4 space-y-1">
-            <li><a href="#home" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Home</a></li>
-            <li><a href="#about" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>About</a></li>
+            <li><Link href="/" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Home</Link></li>
+            <li><Link href="/#about" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>About</Link></li>
 
             <li>
               <div className="px-4 py-3 text-sm font-semibold text-gray-700">Services</div>
               <div className="pl-4 space-y-1">
                 {services.map((service) => (
-                  <a
+                  <Link
                     key={service.name}
-                    href="#services"
+                    href="/#services"
                     className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 rounded-lg hover:bg-gray-50 hover:text-purple-600"
                     onClick={() => setToggleMenu(false)}
                   >
                     <span className="text-lg">{service.icon}</span>
                     <span>{service.name}</span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </li>
 
-            <li><a href="#why-us" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Why Us</a></li>
-            <li><a href="#industries" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Industries</a></li>
-            <li><a href="#resources" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Resources</a></li>
+            <li><Link href="/#why-us" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Why Us</Link></li>
+            <li><Link href="/#industries" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Industries</Link></li>
+            <li><Link href="/#resources" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Resources</Link></li>
             
             {/* ✅ Careers as gradient button (mobile) */}
             <li>
-              <a
+              <Link
                 href="/careers"
                 className="block px-4 py-3 text-sm font-semibold text-center text-white transition-all duration-300 rounded-full shadow-md bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-lg hover:opacity-90"
                 onClick={() => setToggleMenu(false)}
               >
                 Careers
-              </a>
+              </Link>
             </li>
 
-            <li><a href="#contact" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Contact</a></li>
+            <li><Link href="/#contact" className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600" onClick={() => setToggleMenu(false)}>Contact</Link></li>
           </ul>
 
           {/* Contact Info */}

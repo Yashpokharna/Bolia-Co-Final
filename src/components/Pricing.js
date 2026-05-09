@@ -14,6 +14,9 @@ const Contact = () => {
     message: "",
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+
   const sectionRef = useRef(null);
   const observerRef = useRef(null);
 
@@ -46,20 +49,46 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      alert("Please fill in all required fields!");
+      setStatusMessage("Please fill in all required fields!");
+      setTimeout(() => setStatusMessage(""), 5000);
       return;
     }
-    console.log("Form submitted:", formData);
-    alert("Thank you for contacting us! We will get back to you soon.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+
+    setIsLoading(true);
+    setStatusMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatusMessage("✓ Message sent successfully! We'll get back to you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+        setTimeout(() => setStatusMessage(""), 5000);
+      } else {
+        setStatusMessage("Error sending message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatusMessage("Error sending message. Please check your connection.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const contactInfo = [
@@ -226,11 +255,31 @@ const Contact = () => {
 
                 <button
                   onClick={handleSubmit}
-                  className="flex items-center justify-center w-full gap-3 px-8 py-4 text-lg font-bold text-white transition-all duration-300 shadow-lg bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-xl hover:shadow-2xl hover:scale-105 group"
+                  disabled={isLoading}
+                  className="flex items-center justify-center w-full gap-3 px-8 py-4 text-lg font-bold text-white transition-all duration-300 shadow-lg bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-xl hover:shadow-2xl hover:scale-105 group disabled:opacity-70 disabled:cursor-not-allowed disabled:scale-100"
                 >
-                  Send Message
-                  <Send className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  {isLoading ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </>
+                  )}
                 </button>
+
+                {statusMessage && (
+                  <div className={`p-4 text-center rounded-xl font-semibold transition-all ${
+                    statusMessage.includes("successfully") 
+                      ? "bg-green-100 text-green-700" 
+                      : "bg-red-100 text-red-700"
+                  }`}>
+                    {statusMessage}
+                  </div>
+                )}
               </div>
             </div>
           </div>
