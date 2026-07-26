@@ -252,7 +252,7 @@ const Footer = () => {
               </div>
               
               <div className="flex flex-wrap gap-6 text-lg font-bold">
-                <a href="https://yashpokharna.in/" className="text-gray-600 transition-colors link-item hover:text-purple-600">
+                <a href="https://yashpokharna.com/" className="text-gray-600 transition-colors link-item hover:text-purple-600">
                   A project by Yash Pokharna💻.
                 </a>
               </div>
